@@ -1,5 +1,5 @@
 const canvas = document.getElementById('preview');
-const fileInput = document.querySelector('input[type="file"');
+const fileInput = document.querySelector('input[type="file"]');
 const asciiImage = document.getElementById('ascii');
 
 const context = canvas.getContext('2d');
@@ -41,8 +41,8 @@ const convertToGrayScales = (context, width, height) => {
     return grayScales;
 };
 
-const MAXIMUM_WIDTH = 80;
-const MAXIMUM_HEIGHT = 80;
+const MAXIMUM_WIDTH = 200;
+const MAXIMUM_HEIGHT = 200;
 
 const clampDimensions = (width, height) => {
     const rectifiedWidth = Math.floor(getFontRatio() * width);
@@ -85,7 +85,7 @@ fileInput.onchange = (e) => {
     reader.readAsDataURL(file);
 };
 
-const grayRamp = '$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/|()1{}[]?-_+~<>i!lI;:,"^`\'. ';
+const grayRamp = '████████████            ';
 const rampLength = grayRamp.length;
 
 const getCharacterForGrayScale = grayScale => grayRamp[Math.ceil((rampLength - 1) * grayScale / 255)];

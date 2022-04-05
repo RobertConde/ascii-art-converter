@@ -6,21 +6,42 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Ascii Art Converter</title>
     <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./style.css"/>
 </head>
 <body>
-    <header>
-        <h1>Ascii Art Converter</h1>
-        <p>Upload a picture and turn it into pure ASCII masterpiece!</p>
-    </header>
+<header>
+    <h1>Ascii Art Converter</h1>
+    <p>Upload a picture and turn it into pure ASCII masterpiece!</p>
+</header>
 
-    <input type="file" name="picture" />
-    <canvas id="preview" style="display: none;"></canvas>
-    <pre id="ascii"></pre>
+<input type="file" name="picture" data-="Upload an Image">
+<label> Upload an Image</label>
 
-    <footer>
-        <p><a href="#">How does it works?</a> &bull; <a href="#">Source code (GitHub)</a></p>
-    </footer>
-    <script src="./src/index.js"></script>
+<canvas id="preview"></canvas>
+<pre id="ascii"></pre>
+<button onclick="copyASCII()">Copy ASCII</button>
+
+<script>
+	function copyASCII() {
+		/* Get the text field */
+		var copyText = document.getElementById("ascii");
+
+		/* Select the text field */
+		// copyText.select();
+		// copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+		/* Copy the text inside the text field */
+
+		navigator.clipboard.writeText(copyText.innerText);
+
+		/* Alert the copied text */
+		alert("Copied!");
+	}
+</script>
+
+<!--    <footer>-->
+<!--        <p><a href="#">How does it works?</a> &bull; <a href="#">Source code (GitHub)</a></p>-->
+<!--    </footer>-->
+<script src="./src/index.js"></script>
 </body>
 </html>
